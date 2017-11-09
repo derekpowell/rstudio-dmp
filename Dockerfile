@@ -1,8 +1,5 @@
 ####### Dockerfile #######
 FROM rocker/tidyverse:3.3.3
 
-RUN install2.r --error \
---repos 'http://www.bioconductor.org/packages/release/bioc' \
---repos $MRAN \
---deps TRUE \
-car
+RUN R --no-restore --no-save -e \
+'install.packages(c("car", "AID", "psych", "lavaan","bnlearn","BDgraph","brms"), repos="http://cran.us.r-project.org")'
