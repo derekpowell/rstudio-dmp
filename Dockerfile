@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y --no-install-recommends install \
     libnlopt-dev \
     r-cran-rgl \
+    r-cran-boot \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
     --deps TRUE \
