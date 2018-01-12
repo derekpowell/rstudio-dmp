@@ -7,6 +7,12 @@ RUN apt-get -y --no-install-recommends install \
     libnlopt-dev \
     r-cran-rgl \
     r-cran-boot \
+    libgtk2.0-dev \
+    libcairo2-dev \ 
+    xvfb \ 
+    xauth \
+    xfonts-base \
+    libxt-dev \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
     --deps TRUE \
@@ -16,11 +22,11 @@ RUN apt-get -y --no-install-recommends install \
     lavaan \
     bnlearn \
     BDgraph \
-    brms \
     fitdistrplus \
     ggmcmc \
     semPlot \
     simsem \
     snow \
+    brms \
 && R --no-restore --no-save -e \
 'devtools::install_github("hadley/multidplyr")'
