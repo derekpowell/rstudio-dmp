@@ -1,10 +1,11 @@
 ####### Dockerfile #######
 FROM rocker/tidyverse:3.3.3
 
-RUN apt-get install libnlopt-dev
-
-RUN install2.r --error \
+RUN apt-get -y --no-install-recommends install \
+    libnlopt-dev \
+&& install2.r --error \
     --deps TRUE \
+    lme4 \
     car \
     AID \
     psych \
@@ -15,11 +16,7 @@ RUN install2.r --error \
     fitdistrplus \
     ggmcmc \
     semPlot \
-    simsem
-    
-# RUN R --no-restore --no-save -e \
-#'install.packages(c("car", "AID", "psych", "lavaan","bnlearn","BDgraph","brms","corrplot","fitdistrplus","ggmcmc","ggridges","lme4","semPlot","snow"), repos="http://cran.us.r-project.org")'
-
-# && R --no-restore --no-save -e \
-# 'devtools::install_github("hadley/multidplyr")'
-# lme4 may be giving trouble due to nlopt package problem, a url changed apparently
+    simsem \
+    snow \
+&& R --no-restore --no-save -e \
+'devtools::install_github("hadley/multidplyr")'
