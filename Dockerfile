@@ -3,7 +3,8 @@ FROM rocker/tidyverse:3.3.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -y --no-install-recommends install \
+RUN RUN apt-get update -qq && \
+    apt-get -y --no-install-recommends install \
     libnlopt-dev \
     r-cran-rgl \
     r-cran-boot \
