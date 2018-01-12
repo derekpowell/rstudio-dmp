@@ -13,6 +13,7 @@ RUN apt-get -y --no-install-recommends install \
     xauth \
     xfonts-base \
     libxt-dev \
+    libjpeg-dev \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
     --deps TRUE \
@@ -23,10 +24,10 @@ RUN apt-get -y --no-install-recommends install \
     bnlearn \
     BDgraph \
     fitdistrplus \
-    ggmcmc \
     semPlot \
     simsem \
     snow \
     brms \
+    ggmcmc \
 && R --no-restore --no-save -e \
 'devtools::install_github("hadley/multidplyr")'
