@@ -1,6 +1,8 @@
 ####### Dockerfile #######
 FROM rocker/tidyverse:3.3.3
 
+RUN apt-get install libnlopt-dev
+
 RUN install2.r --error \
     --deps TRUE \
     car \
