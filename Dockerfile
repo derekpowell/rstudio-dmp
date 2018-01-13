@@ -16,6 +16,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     xfonts-base \
     r-cran-boot \
     r-cran-numderiv \
+    r-cran-snow \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))'\
 && install2.r --error \
     --deps TRUE \
@@ -26,7 +27,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     fitdistrplus \
     semPlot \
     simsem \
-    snow \
     brms #\
 #     ggmcmc \
 #     bnlearn \
