@@ -3,11 +3,9 @@ FROM rocker/tidyverse:3.4.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -qq && \
-    apt-get -y --no-install-recommends install \
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libnlopt-dev \
-    r-cran-rgl \
-    r-cran-boot \
+    libglu1-mesa-dev \
     libgtk2.0-dev \
     libcairo2-dev \ 
     xvfb \ 
@@ -15,6 +13,8 @@ RUN apt-get update -qq && \
     xfonts-base \
     libxt-dev \
     libjpeg-dev \
+    r-cran-boot \
+    r-cran-numderiv \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
     --deps TRUE \
@@ -22,13 +22,12 @@ RUN apt-get update -qq && \
     car \
     psych \
     lavaan \
-    bnlearn \
-    BDgraph \
     fitdistrplus \
     semPlot \
     simsem \
     snow \
     brms \
     ggmcmc \
-&& R --no-restore --no-save -e \
-'devtools::install_github("hadley/multidplyr")'
+    bnlearn \
+    BDgraph \
+&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
