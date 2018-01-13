@@ -15,7 +15,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libjpeg-dev \
     r-cran-boot \
     r-cran-numderiv \
-# && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
+&& R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' 
 # && install2.r --error \
 #     --deps TRUE \
 #     lme4 \
