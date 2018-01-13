@@ -8,11 +8,12 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libglu1-mesa-dev \
     libgtk2.0-dev \
     libcairo2-dev \ 
+    libxt-dev \
+    libjpeg-dev \
+    libgsl0ldbl \
     xvfb \ 
     xauth \
     xfonts-base \
-    libxt-dev \
-    libjpeg-dev \
     r-cran-boot \
     r-cran-numderiv \
 && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))'\
@@ -22,11 +23,11 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     car \
     psych \
     lavaan \
-    fitdistrplus #\
+    fitdistrplus \
 #     semPlot \
-#     simsem \
-#     snow \
-#     brms \
+    simsem \
+    snow \
+    brms #\
 #     ggmcmc \
 #     bnlearn \
 #     BDgraph \
