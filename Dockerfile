@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libcairo2-dev \ 
     libxt-dev \
     libjpeg-dev \
-#     libgsl0ldbl \
+    libgsl0-dev \
     xvfb \ 
     xauth \
     xfonts-base \
@@ -24,7 +24,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     psych \
     lavaan \
     fitdistrplus \
-#     semPlot \
+    semPlot \
     simsem \
     snow \
     brms #\
