@@ -15,19 +15,19 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libjpeg-dev \
     r-cran-boot \
     r-cran-numderiv \
-&& R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
-&& install2.r --error \
-    --deps TRUE \
-    lme4 \
-    car \
-    psych \
-    lavaan \
-    fitdistrplus \
-    semPlot \
-    simsem \
-    snow \
-    brms \
-    ggmcmc \
-    bnlearn \
-    BDgraph \
-&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
+# && R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))' \
+# && install2.r --error \
+#     --deps TRUE \
+#     lme4 \
+#     car \
+#     psych \
+#     lavaan \
+#     fitdistrplus \
+#     semPlot \
+#     simsem \
+#     snow \
+#     brms \
+#     ggmcmc \
+#     bnlearn \
+#     BDgraph \
+# && R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
