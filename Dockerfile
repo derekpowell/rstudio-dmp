@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libcairo2-dev \ 
     libxt-dev \
     libjpeg-dev \
-    libgsl0ldbl \
+#     libgsl0ldbl \
     xvfb \ 
     xauth \
     xfonts-base \
