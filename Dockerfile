@@ -31,4 +31,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     ggmcmc \
     bnlearn \
     BDgraph \
+    viridis \
+    corrplot \
+    ggridges \
 && R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
