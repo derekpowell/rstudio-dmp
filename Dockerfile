@@ -27,8 +27,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     fitdistrplus \
     semPlot \
     simsem \
-    brms #\
-#     ggmcmc \
-#     bnlearn \
-#     BDgraph \
-# && R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
+    brms \
+    ggmcmc \
+    bnlearn \
+    BDgraph \
+&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
