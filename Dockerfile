@@ -1,5 +1,5 @@
 ####### Dockerfile #######
-FROM rocker/tidyverse:3.3.3
+FROM rocker/tidyverse:3.4.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,8 +30,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     brms \
     ggmcmc \
     bnlearn \
-    BDgraph \
+    # BDgraph \
     viridis \
     corrplot \
     ggridges \
-&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")'
+&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")' \
+&& R --no-restore --no-save -e 'devtools::install_version("BDgraph", version="2.40")'
