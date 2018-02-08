@@ -11,6 +11,10 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxt-dev \
     libjpeg-dev \
     libgsl0-dev \
+    libgmp3-dev \
+    libmpfr-dev \
+    libgdal-dev \
+    libproj-dev \
     xvfb \ 
     xauth \
     xfonts-base \
@@ -30,7 +34,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     brms \
     ggmcmc \
     bnlearn \
-    # BDgraph \
     viridis \
     corrplot \
     ggridges \
