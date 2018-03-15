@@ -1,41 +1,46 @@
 ####### Dockerfile #######
-FROM rocker/tidyverse:3.4.3
+FROM rocker/verse:3.4.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
+COPY set_theme.sh /etc/cont-init.d/theme
+
+COPY git_config.sh /etc/cont-init.d/gitconfig
+
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
-    libnlopt-dev \
-    libglu1-mesa-dev \
-    libgtk2.0-dev \
-    libcairo2-dev \ 
     libxt-dev \
-    libjpeg-dev \
-    libgsl0-dev \
-    libgmp3-dev \
-    libmpfr-dev \
-    libgdal-dev \
-    libproj-dev \
-    xvfb \ 
-    xauth \
-    xfonts-base \
-    r-cran-boot \
-    r-cran-numderiv \
-    r-cran-snow \
-&& R --no-restore --no-save -e 'source("https://bioconductor.org/biocLite.R");biocLite(c("graph","Rgraphviz","RBGL"))'\
+    libudunits2-dev \  
+    jags \
 && install2.r --error \
-    --deps TRUE \
-    lme4 \
-    car \
-    psych \
-    lavaan \
+    bayesboot \ 
+    BayesFactor \
+    BDgraph \
+    blavaan \
+    bnlearn \
+    bnstruct \
+    boot \
+    brms \
+    broom \
     fitdistrplus \
+    fitdistrplus \
+    geomnet \
+    ggmcmc \
+    ggnetwork \
+    ggraph \
+    ggrepel \
+    gRain \
+    gRim \
+    HydeNet \
+    lavaan \
+    lme4 \
+    rms \
+    rstanarm \
     semPlot \
     simsem \
-    brms \
-    ggmcmc \
-    bnlearn \
+    tidygraph \
     viridis \
-    corrplot \
-    ggridges \
-&& R --no-restore --no-save -e 'devtools::install_github("hadley/multidplyr")' \
-&& R --no-restore --no-save -e 'devtools::install_version("BDgraph", version="2.40")'
+&& installGithub.r \
+    hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2
+    mjskay/tidybayes@1432704feef258e068fb4c8304089f2d8f67cf7f \
+    rmcelreath/rethinking@1.59 \
+
