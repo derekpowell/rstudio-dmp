@@ -40,7 +40,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     tidygraph \
     viridis \
 && installGithub.r \
-    hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2
+    hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2 \
     mjskay/tidybayes@1432704feef258e068fb4c8304089f2d8f67cf7f \
     rmcelreath/rethinking@1.59 \
 
