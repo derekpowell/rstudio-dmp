@@ -11,6 +11,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxt-dev \
     libudunits2-dev \  
     jags \
+&& R --no-restore --no-save -e \    
+    'BiocInstaller::biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
     bayesboot \ 
     BayesFactor \
@@ -42,5 +44,5 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 && installGithub.r \
     hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2 \
     mjskay/tidybayes@1432704feef258e068fb4c8304089f2d8f67cf7f \
-    rmcelreath/rethinking@1.59 \
+    rmcelreath/rethinking@1.59
 
