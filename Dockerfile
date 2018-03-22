@@ -7,6 +7,8 @@ COPY set_theme.sh /etc/cont-init.d/theme
 
 COPY git_config.sh /etc/cont-init.d/gitconfig
 
+COPY rstudio_bindings.json /home/rstudio/.R/rstudio/keybindings/rstudio_bindings.json
+
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxt-dev \
     libudunits2-dev \  

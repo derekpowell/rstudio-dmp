@@ -1,6 +1,6 @@
 # rstudio-dmp
 
-This is a Docker image for my custom rstudio environment. Currently wraps together all packages from rstudio-init, rstudio-bayesreg and rstudio-graphmod, and some others. Versions are tagged by date, e.g. "20180317"
+This is a Docker image for my custom rstudio environment. Currently wraps together all packages from rstudio-init, rstudio-bayesreg and rstudio-graphmod, and some others. Versions are tagged by date, e.g. "20180317". This image may be somewhat ahead of these components, as I am now using this as my primary image.
 
 ## rstudio-init
 
@@ -9,9 +9,7 @@ This draws on the most-recently versioned rocker/verse image, currently `rocker/
 Takes the extra arguments:
 
 * Set the theme with `-e THEME="Solarized Dark"` or any other RStudio theme
-* Configure git with `GIT_USER` and `GIT_EMAIL` environment variables **BROKEN**
-
-NOTE: git config doesn't work, possibly because it's being run as root, possibly another issue. Solution may be to bring git credentials in over ssh, rather than doing them in the container.
+* Configure git with `GIT_USER` and `GIT_EMAIL` environment variables
 
 ## rstudio-bayesreg
 
@@ -41,8 +39,9 @@ It features:
 
 ## Other additions
 
-Also added the `styler` package for code styling.
+* Added the `styler` package for automated code styling. 
+* Added custom keyboard shortcuts with the file `rstudio_bindings.json`
 
 ## Notes
 
-**Docker Hub Automated builds are failing as of 2018-03-17. Images hosted there were built locally by me.**
+**Docker Hub Automated builds are still failing as of 2018-03-22. Images hosted there were built locally by me.**
