@@ -2,6 +2,8 @@
 
 This is a Docker image for my custom rstudio environment. Currently wraps together all packages from rstudio-init, rstudio-bayesreg and rstudio-graphmod, and some others. Versions are tagged by date, e.g. "20180317". This image may be somewhat ahead of these components, as I am now using this as my primary image.
 
+Last updated: August 27, 2018
+
 ## rstudio-init
 
 This draws on the most-recently versioned rocker/verse image, currently `rocker/verse:3.4.3`. This is a base image where I add scripts to the image `\init`, primarily to add customizations and improve workflow.
