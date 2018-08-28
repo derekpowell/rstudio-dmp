@@ -50,6 +50,5 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2 \
     mjskay/tidybayes@1432704feef258e068fb4c8304089f2d8f67cf7f \
     rmcelreath/rethinking@1.59 \
-    mjskay/tidybayes.rethinking@6859cc524c9317741d0e6e6d44f6711c4633da83 \
-    thomasp85/tidygraph@de00d4d1bbf9a5e00746727125e2abd801fb7ddf
+    mjskay/tidybayes.rethinking@6859cc524c9317741d0e6e6d44f6711c4633da83
 

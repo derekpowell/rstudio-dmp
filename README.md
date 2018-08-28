@@ -33,7 +33,7 @@ Adds a collection of packages for graphical modeling.
 
 It features:
 
-* Structure learning: graph, bnlearn, bnstruct, BDgraph (undirected),
+* Structure learning: graph, bnlearn, bnstruct, BDgraph (undirected), BiDAG (mcmc)
 * Bayesian Network Inference: gRain, gRim, HydeNet (MCMC)
 * Structural Equation Modeling: lavaan, blavaan, simsem
 * Plotting tools: tidygraph, ggraph, ggnetwork, geomnet, ggrepel, semPlot
