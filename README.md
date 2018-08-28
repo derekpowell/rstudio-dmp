@@ -44,4 +44,4 @@ It features:
 
 ## Notes
 
-**Docker Hub Automated builds are still failing as of 2018-03-22. Images hosted there were built locally by me.**
+**Image exceeds [limits for docker hub automated builds](https://success.docker.com/article/what-are-the-currentresource-limits-placed-on-automated-builds). Images hosted on Docker hub were built locally by me.**

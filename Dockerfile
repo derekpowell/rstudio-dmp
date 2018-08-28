@@ -7,7 +7,9 @@ COPY set_theme.sh /etc/cont-init.d/theme
 
 COPY git_config.sh /etc/cont-init.d/gitconfig
 
-COPY rstudio_bindings.json /home/rstudio/.R/rstudio/keybindings/rstudio_bindings.json
+COPY rstudio_bindings.json /etc/rstudio_bindings.json
+
+COPY set_keybindings.sh /etc/cont-init.d/setkeys
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxt-dev \
@@ -26,7 +28,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     brms \
     broom \
     fitdistrplus \
-    fitdistrplus \
     geomnet \
     ggmcmc \
     ggnetwork \
@@ -44,8 +45,11 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     styler \
     tidygraph \
     viridis \
+	BiDAG \
 && installGithub.r \
     hadley/multidplyr@0085ded4048d7fbe5079616c40640dbf5982faf2 \
     mjskay/tidybayes@1432704feef258e068fb4c8304089f2d8f67cf7f \
-    rmcelreath/rethinking@1.59
+    rmcelreath/rethinking@1.59 \
+    mjskay/tidybayes.rethinking@6859cc524c9317741d0e6e6d44f6711c4633da83 \
+    thomasp85/tidygraph@de00d4d1bbf9a5e00746727125e2abd801fb7ddf
 
