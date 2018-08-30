@@ -1,5 +1,5 @@
 ####### Dockerfile #######
-FROM rocker/verse:3.4.3
+FROM rocker/verse:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -15,6 +15,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     libxt-dev \
     libudunits2-dev \  
     jags \
+    screen \
 && R --no-restore --no-save -e \    
     'BiocInstaller::biocLite(c("graph","Rgraphviz","RBGL"))' \
 && install2.r --error \
